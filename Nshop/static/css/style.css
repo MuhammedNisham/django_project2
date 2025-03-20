@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    header{
+        height: 40px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+    }
+    main{
+        margin-top: 50px;
+    }
+}
