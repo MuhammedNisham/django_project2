@@ -11,6 +11,7 @@ def homeView(request):
 
     # context data
     context = {
+        'products' : Product.objects.all
 
     }
     return HttpResponse(template.render(context, request))

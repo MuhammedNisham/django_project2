@@ -8,4 +8,12 @@
 
  This is my home
 
+ <ol>
+    {% for Products in products %}
+
+    <li>{{product.name}} - Rs. {{product.price}}</li>
+
+    {% endfor %}
+ </ol>
+
  {% endblock %}
