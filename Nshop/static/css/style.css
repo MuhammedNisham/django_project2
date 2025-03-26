@@ -35,14 +35,26 @@ body {
                         height: 50%;
                         img {
                             height: 110px;
-                            background-color: black;
+                            width: 250px;
+                            background-color: #ced4da;
+                            object-fit: cover;
+                            transition-duration: .5s;
                             
+                        }
+                        img:hover{
+                            transform: scale(.9);
+                            transition-duration: .5s;
                         }
                         h5{
                             font-size: medium;
-                            
                             width: 200px;
                             height: 30px;
+                            a{
+                                color:  black;
+                            }
+                            a:hover{
+                                color: #495057;
+                            }
                         }
                         p.card-caption{
                             -webkit-box-orient: vertical;
@@ -57,10 +69,17 @@ body {
                     }
                     a.btn {
                         background-color: #495057;
+                        border: solid #495057;
                         font-size: smaller;
                         margin-bottom: 5px;
                     }
+                    a.btn:active{
+                        color: black;
+                        background-color: #ced4da;
+                        border: solid #ced4da;
+                    }
                 }
+                
             }
         }
 
