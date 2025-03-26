@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse
 
+from django.views.generic import DetailView
+
 from .models import Product
 # Create your views here.
 def homeView(request):
@@ -15,6 +17,10 @@ def homeView(request):
 
     }
     return HttpResponse(template.render(context, request))
+
+class ProductDetails(DetailView):
+    model = Product
+    template_name = 'product_details.html'
 
 
 def aboutView(request):

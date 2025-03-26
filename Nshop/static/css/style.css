@@ -8,12 +8,17 @@
 body {
     background-color: #ced4da;
     header#site-header {
+        
         height: 20px;
         }
         nav.navbar{
             border-radius: 7px;
             background-color: #ffa8B6;
             color: black;
+            position: fixed;
+            top: 0;
+            z-index: 10;
+            width: 100%;
         }
         
 
@@ -21,6 +26,7 @@ body {
         margin: auto;
         margin-top: 60px;
         max-width: 80%;
+        margin-bottom: 30px;
 
         /* home page */
         .container {
