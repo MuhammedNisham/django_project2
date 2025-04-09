@@ -5,5 +5,31 @@ Details : {{ product.name }}
 {% endblock %}
 
 {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+        <div class="col h-100 shadow-sm mx-3">
+            <img class="w-100" src="{{product.img.url}}" alt="">
+        </div>
+        <div class="col">
+            <div class="row">
+                <h3>
+                    {{product.name}}
+                </h3>
+                <span>
+                    Rs.{{product.price}}
+                </span>
+                <p>
+                    {{product.desc}}
+                </p>
+            </div>
+            <div class="row">
+                <a href="" class="btn btn-primary w-50">Add to Cart</a>
+                <a href="{% url 'edit_product' product.pk %}" class="btn btn-secondary w-50">Edit Product</a>
+                 <a href="{% url 'del_product'  product.pk %}" class="btn btn-danger">Delete</a>
+            </div>
+            
+        </div>
 
+    </div>
 {% endblock %}
