@@ -7,6 +7,9 @@ from django.views.generic import DetailView
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from .models import Product
+
+from .forms import AddProductForm
+
 # Create your views here.
 def homeView(request):
     #template
@@ -40,9 +43,7 @@ def ContactView(request):
 class AddProduct(CreateView):
      model = Product
      template_name = 'add_products.html'
-     fields = '__all__' # include all the fields in the form
-     # This view on successful addition of products, redirects the user to a 
-     # new page, to set this page, we do the below line of code
+     form_class = AddProductForm
      success_url = '/'
 
 class EditProduct(UpdateView):

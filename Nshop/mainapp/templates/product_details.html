@@ -22,11 +22,13 @@ Details : {{ product.name }}
                 <p>
                     {{product.desc}}
                 </p>
+                <a href="{% url 'add_to_cart' product.pk %}" class="btn btn-primary w-60 center ">Add to Cart</a>
             </div>
             <div class="row">
-                <a href="" class="btn btn-primary w-50">Add to Cart</a>
+                {% if user.is_staff %}
                 <a href="{% url 'edit_product' product.pk %}" class="btn btn-secondary w-50">Edit Product</a>
-                 <a href="{% url 'del_product'  product.pk %}" class="btn btn-danger">Delete</a>
+                <a href="{% url 'del_product'  product.pk %}" class="btn btn-danger">Delete</a>
+                {% endif %}
             </div>
             
         </div>

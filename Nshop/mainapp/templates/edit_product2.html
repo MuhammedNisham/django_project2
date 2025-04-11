@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}
+Details : {{ product.name }}
+{% endblock %}
+ 
+{% block content %}
+ <form method="post" enctype="multipart/form-data" class="form-control">
+ 
+     {% csrf_token %}
+ <div class="container">
+     <div class="row">
+         <div class="col h-100 shadow-sm mx-3">
+             <img class="w-100" src="{{product.img.url}}" alt="">
+             {{form.img}}
+         </div>
+         
+         <div class="col">
+             <div class="row">
+                 <h3>
+                     {{form.name}}
+                     
+                 </h3>
+                 <span>
+                     Rs.{{form.price}}
+                 </span>
+                 <p>
+                     {{form.desc}}
+                 </p>
+             </div>
+             <div class="row">
+                 <button type="submit" class="btn btn-primary">
+                     Save
+                 </button>
+             </div>
+             
+         </div>
+ 
+     </div>
+ </form>
+ </div>
+{% endblock %}
