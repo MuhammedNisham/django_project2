@@ -5,7 +5,7 @@ from mainapp.models import Product
 from django.contrib.auth.decorators import login_required
 
 from django.http import JsonResponse
-from django.shortcuts import get_list_or_404
+from django.shortcuts import get_object_or_404
  
  
  # Create your views here
@@ -17,7 +17,8 @@ def viewCart(request):
     total_price = sum([float(item.product.price) * item.quantity for item in cartItems])
  
     template = 'cart.html'
- 
+
+    print(total_price)
     context = {
        'items' : cartItems,
        'total' : total_price
@@ -44,7 +45,7 @@ def remFromCart(request,cart_item_id):
 #this is a api function
 @login_required
 def addQuantity(request, cart_item_id):
-    cart_item = get_list_or_404(CartItem, id=cart_item_id, user=request.user)
+    cart_item = get_object_or_404(CartItem, id=cart_item_id, user=request.user)
     cart_item.quantity += 1
     cart_item.save()
     overall_total = sum(item.get_total() for item in CartItem.objects.filter(user=request.user))
@@ -57,7 +58,7 @@ def addQuantity(request, cart_item_id):
 
 @login_required
 def remQuantity(request, cart_item_id):
-    cart_item = get_list_or_404(CartItem, id=cart_item_id, user=request.user)
+    cart_item = get_object_or_404(CartItem, id=cart_item_id, user=request.user)
     if cart_item.quantity > 1:
         cart_item.quantity -= 1
         cart_item.save()
