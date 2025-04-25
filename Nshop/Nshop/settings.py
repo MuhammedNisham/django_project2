@@ -140,3 +140,16 @@ LOGIN_URL = 'signin'
  
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+
+# Razorpay details
+
+RAZORPAY_KEY_ID = "rzp_test_r9I9MjFRYR5mTC"
+RAZORPAY_KEY_SECRET = "61WixEGgWpVGz6wGyNLbTdVV"
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://api.razorpay.com',  #Add Razoray's domain
+]
+
+TIME_ZONE = 'Asia/kolkata'  #Change to your local time
+USE_TZ = True
