@@ -28,7 +28,9 @@ urlpatterns = [
     path('cart/', include('cart.urls')),
     path('accounts/', include('authentication.urls')),
     path('accounts/', include('authentication.urls')),
-    path('accounts/',include('django.contrib.auth.urls'))
+    path('accounts/',include('django.contrib.auth.urls')),
+    path('', include('orders.urls')),
+    path('',include('payments.urls')),
 ]
 
 # the following line allows us to use the given media path during development
